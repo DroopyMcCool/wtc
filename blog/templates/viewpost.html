@@ -1,0 +1,10 @@
+{% extends "master.html" %}
+
+{% block content %}
+    <div class="container">
+        <h3>{{ title }}</h3>
+        {% for paragraph in post %}
+          <p>{% paragraph %}</p>
+        {% endfor %}
+    </div>
+{% endblock %}
