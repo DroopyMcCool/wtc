@@ -1,40 +1,17 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>My Blog</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
-    </head>
-    <body>
-        <nav class="navbar navbar-default navbar-static-top">
-          <div class="container">
-            <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="/"><span class="glyphicon glyphicon-home"></span> Home</a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog Posts <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="{{ url_for('posts', name='hello_world') }}">Hello World</a></li>
-                  </ul>
-              </li>
-            </ul>
-          </div>
-        </nav>
-        <div class="jumbotron text-center">
-            <div class="container">
-                <h1>Will Coates' Blog</h1>
-                <p>This is almost a skeleton blog site written in Python (using Flask).</p>
-            </div>
-        </div>
+{% extends "master.html" %}
+
+{% block content %}
+    <div class="jumbotron text-center">
         <div class="container">
-            <h3>My posts!</h3>
-            <ul>
-                <li><a href="{{ url_for('posts', name='course1') }}">What I want to get out of this course</a></li>
-                <li><a href="{{ url_for('posts', name='beinglazy') }}">Problem solving and being lazy</a></li>
-            </ul>
+            <h1>Will Coates' Blog</h1>
+            <p>This is almost a skeleton blog site written in Python (using Flask).</p>
         </div>
-    </body>
-</html>
+    </div>
+    <div class="container">
+        <h3>My posts!</h3>
+        <ul>
+            <li><a href="{{ url_for('posts', name='course1') }}">What I want to get out of this course</a></li>
+            <li><a href="{{ url_for('posts', name='beinglazy') }}">Problem solving and being lazy</a></li>
+        </ul>
+    </div>
+{% endblock %}
