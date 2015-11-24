@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}" />
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-static-top navbar-inverse">
+        <nav class="navbar navbar-default navbar-static-top">
           <div class="container">
             <ul class="nav navbar-nav">
               <li class="active">
@@ -25,19 +25,16 @@
         </nav>
         <div class="jumbotron text-center">
             <div class="container">
-                <h1>My Blog</h1>
-                <p>This is a skeleton blog site written in Python (using Flask).</p>
+                <h1>Will Coates' Blog</h1>
+                <p>This is almost a skeleton blog site written in Python (using Flask).</p>
             </div>
         </div>
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <h3>I've written one blog post!</h3>
-                    <ul>
-                        <li><a href="{{ url_for('posts', name='hello_world') }}">Hello World</a></li>
-                    </ul>
-            </div>
-          </div>
+            <h3>My posts!</h3>
+            <ul>
+                <li><a href="{{ url_for('posts', name='course1') }}">What I want to get out of this course</a></li>
+                <li><a href="{{ url_for('posts', name='beinglazy') }}">Problem solving and being lazy</a></li>
+            </ul>
         </div>
     </body>
 </html>
