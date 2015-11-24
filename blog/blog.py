@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from os import getenv
 
 app = Flask(__name__)
 
@@ -13,4 +14,5 @@ def posts(name):
     return render_template('posts/%s.html' % name)
 
 if __name__ == '__main__':
+    app.secret_key = getenv('SessionKey')
     app.run(debug=True, host='0.0.0.0')
