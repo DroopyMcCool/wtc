@@ -15,10 +15,10 @@ def home():
 def posts(name):
     return render_template('posts/%s.html' % name)
 
-@app.route('/newpost/<name>')
+@app.route('/newposts/<name>/')
 def testpost(name):
     data = ''
-    with open('blog/posts.json', 'r') as f:
+    with open('posts.json', 'r') as f:
         data = f.read()
     realdata = json.loads(data)
     post = realdata[name]
